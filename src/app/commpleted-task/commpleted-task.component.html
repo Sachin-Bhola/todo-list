@@ -1,0 +1,12 @@
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>TASK</th>
+    <th>STATUS</th>
+  </tr>
+  <tr *ngFor="let task of allComTask">
+    <td>{{task.id}}</td>
+    <td>{{task.task}}</td>
+    <td> <input type="checkbox" [(ngModel)]="task.status" disabled></td>
+  </tr>
+</table>

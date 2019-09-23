@@ -1,0 +1,44 @@
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>TASK</th>
+    <th>STATUS</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let task of alltasks">
+    <td>{{task.id}}</td>
+    <td>{{task.task}}</td>
+    <td> <input type="checkbox" [(ngModel)]="task.status" (click)="updatedTask(task)"></td>
+    <td><button type="button" data-toggle="modal" data-target="#exampleModal" (click)="display(task)"
+        class="btn btn-info">Edit</button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Update Task</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input type="text" class="form-control" #editTask value="{{taskvalue}}">
+            </div>
+            <div class="modal-footer">
+              <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
+              <button type="button" data-dismiss="modal" (click)="edit(editTask.value)" class="btn btn-primary">Save
+                changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="deleteTask(task)">Delete</button>
+    </td>
+  </tr>
+</table>
+<div>
+  <h4>Remaining Task :{{remTaskNum}}</h4>
+  <h4>Completed Task : {{comTaskNum}}</h4>
+</div>

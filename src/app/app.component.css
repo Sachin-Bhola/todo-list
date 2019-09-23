@@ -1,0 +1,50 @@
+h2 {
+  text-align: center;
+  color: white;
+  background: black;
+  font-weight: bolder;
+  width: 100%;
+}
+
+.container {
+  background: white;
+}
+
+nav {
+  background: rgb(170, 170, 170);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 20px 20px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+a:hover {
+  background: rgb(80, 77, 77);
+  transition: .3s;
+}
+
+.inputNewTask {
+  width: 78%;
+  float: left;
+  margin-left: 40px;
+}
+
+.addTaskBtn {
+  width: 15%;
+  float: right;
+}
+
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
